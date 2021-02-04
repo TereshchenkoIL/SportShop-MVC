@@ -1,0 +1,134 @@
+body{
+    --color-primary: #fff;
+}
+.navbar{
+    background-color: #3f4041;
+    color: white;
+}
+.nav-ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-li
+{
+    margin: 0 15px;
+}
+.fa-lg
+{
+    font-size: 1.5333em;
+    color: var(--color-primary);
+}
+.fa-heart{
+    color: red;
+}
+main{
+    margin-top: 80px;
+}
+.breadcrumb{
+    background-color: white;
+}
+.filter-ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filter-ul{
+    padding:0;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #f6f6f6;
+    padding-inline-start: 0;
+}
+.menu-item{
+
+   display: inline-block;
+    position: relative;
+    cursor: pointer;
+    z-index: 7;
+}
+.menu-item .sub-menu{
+width: 100%;
+
+    position: absolute;
+    cursor: pointer;
+    list-style: none;
+}
+.filter-li
+{
+    padding: 0;
+    margin: 0;
+    z-index: 7;
+    position: relative;
+}
+.sub-menu
+{
+    margin-top: 10px;;
+    min-width: 112px;
+    position: relative;
+    display: none;
+    background-color: #f6f6f6;
+    border: 2px solid grey;
+    padding: 8px;
+    align-items: flex-start;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.active{
+    display: flex;
+}
+.bordered{
+    position: relative;
+background-color: #f6f6f6;
+    border: 2px solid grey;
+    padding-bottom: 10px;
+ border-bottom: 0px;
+    z-index: 7;
+    padding-bottom: 15px;
+}
+.charact{
+    display: flex;
+    flex-direction: row;
+justify-content: space-between;
+}
+h6{
+    font-size: 15px;
+}
+.product-text{
+    font-size: 15px;
+    color: #8e8e8e;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+.Size-panel{
+    display: flex;
+
+}
+.left{
+    margin-right: 1em;
+}
+.left .right{
+    display: flex;
+    flex-direction: row;
+}
+.arrows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 46px;
+    height: 46px;
+    border: 1px solid grey ;
+    cursor: pointer;
+
+}
+

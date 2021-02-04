@@ -1,0 +1,46 @@
+﻿@model List<MySportShop.Models.ViewModel.CartVM>
+
+<div class="container">
+
+    <div class="row mt-4 mb-4">
+        <div class="col">
+            <h2>Cart</h2>
+        </div>
+    </div>
+
+    <form method="post"  >
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+
+        <div class="row">
+           
+            <input  asp-for="@Model[i].Product.ProductId" hidden />
+            <div class="col-sm-4">
+              
+                <img src="@WC.ImagePath@Model[i].Product.Image" width="100%" style="border-radius:5px; border:1px solid #bbb" />
+            </div>
+            <div class="col-sm-3">
+                <p> @Model[i].Product.Name</p>
+            </div>
+            <div class="col-sm-3">
+                <input   asp-for="@Model[i].Quantity" class="form-control" />
+            </div>
+            <div class="col">
+              
+                <p>@Model[i].Product.Price грн</p>
+                <a asp-route-Size="@Model[i].Product.ProductId" asp-action="Delete" class="btn btn-danger mx-2">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+            </div>
+        </div>
+        }
+    <div class="row">
+        <div class="col-6">
+            <input type="submit"  class="btn btn-success w-100" value="Create" />
+        </div>
+        <div class="col-6">
+            <a asp-action="Index" asp-controller="Home">Back</a>
+        </div>
+    </div>
+    </form>
+</div>

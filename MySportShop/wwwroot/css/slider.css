@@ -1,0 +1,80 @@
+.slider{
+    width: 160px;
+    background: white;
+    border: 1px solid #C4C4C4;
+    border-radius: 2px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    color: grey;
+}
+/* заголовок блока */
+.price-slider_title {
+
+    line-height: 35px;
+    color: grey;
+    margin-bottom: 15px;
+}
+
+/* выравнивание и отступ для текста и вывода значений */
+.price-slider__text,
+.price-slider__values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* слова "от" и "до" */
+.price-slider__text_from,
+.price-slider__text_to {
+    font-size: 18px;
+    line-height: 21px;
+}
+
+/* основной диапазон ползунков */
+.price-slider {
+    position: relative;
+    height: 19px; /* должна быть 19 */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    /*   background: #C4C4C4; */
+    border: 1px solid grey;
+}
+
+/* активный диапазон ползунков */
+.price-slider__range-between {
+    position: absolute;
+    height: 18px;
+    border-radius: 8px;
+    /*   top: 1.1px; */
+    background: grey;
+}
+
+/* ползунки */
+.price-slider_first,
+.price-slider_second {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: grey;
+}
+
+.price-slider_first {
+    left: -2px;
+}
+
+/* вывод значений ползунков */
+.price-slider__value_min,
+.price-slider__value_max {
+    width: 35px;
+    background: inherit;
+    color: grey;
+    border: none;
+}
+
+.price-slider__value_max {
+    text-align: right;
+}
