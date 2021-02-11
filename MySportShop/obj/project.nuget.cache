@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V/7n6Pzu2cddePUZ+S6ZFTSt2p1+G0k69l6/hTuj3XyT79p9KSFbwbYIjdufVsDIpBOxRZ+DUyPO9JuISDuiIQ==",
+  "dgSpecHash": "aQkny4b9IV9y7RPiWa2iFiXRS5rkLoZXcbZUEzcwtyj3qK68Xppr/D7nHt+Pc6sZ+pgS06A4vR9gbjXh2Q7wNQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,9 @@
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\nlog\\4.7.6\\nlog.4.7.6.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\nlog.extensions.logging\\1.7.0\\nlog.extensions.logging.1.7.0.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\nlog.web.aspnetcore\\4.10.0\\nlog.web.aspnetcore.4.10.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

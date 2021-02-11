@@ -204,3 +204,7 @@ D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Property
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Property\Index.cshtml.g.cs
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Property\Upsert.cshtml.g.cs
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\NLog.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\NLog.Web.AspNetCore.dll

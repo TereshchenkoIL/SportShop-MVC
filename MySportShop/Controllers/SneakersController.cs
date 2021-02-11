@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MySportShop.Data;
 using MySportShop.Models;
 using MySportShop.Models.ViewModel;
@@ -19,15 +20,19 @@ namespace MySportShop.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public SneakersController(ApplicationDbContext applicationDbContext, IWebHostEnvironment webHostEnvironment)
+        private readonly ILogger<SneakersController> _logger;
+        public SneakersController(ApplicationDbContext applicationDbContext, IWebHostEnvironment webHostEnvironment, ILogger<SneakersController> logger)
         {
+            _logger = logger;
             _db = applicationDbContext;
             _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
             IEnumerable<Product> products = _db.Products.Include(u => u.Properties);
+            _logger.LogInformation("GET Sneakers.Index called");
             return View(products);
+            
         }
 
         //GET
@@ -42,14 +47,19 @@ namespace MySportShop.Controllers
 
             if(id == null)
             {
+                _logger.LogWarning("id parametr of GET Sneakers.Upsert == null");
                 return View(productVM);
             }
             else
             {
                 Product product = _db.Products.Find(id);
                 if (product == null)
+                {
+                    _logger.LogWarning("Product not found in Sneakers.Upsert");
                     return NotFound();
+                }
                 productVM.Product = product;
+                _logger.LogInformation("GET Sneakers.Upsert called");
                 return View(productVM);
             }
 
@@ -76,6 +86,7 @@ namespace MySportShop.Controllers
                         files[0].CopyTo(fileStream);
                     }
                     productVM.Product.Image = fileName + extension;
+                    
                     _db.Products.Add(productVM.Product);
                 }else
                 {
@@ -106,9 +117,12 @@ namespace MySportShop.Controllers
                     }
                     _db.Products.Update(productVM.Product);
                 }
+                
                 _db.SaveChanges();
+                _logger.LogInformation("Item has been upserted");
                 return RedirectToAction("Index");
             }
+            
             productVM.Properties =  _db.Properties.Select(x => new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() });
             return View(productVM);
 
@@ -122,7 +136,10 @@ namespace MySportShop.Controllers
             
             Product product = _db.Products.Find(id);
             if (product == null)
+            {
+                _logger.LogWarning("Product not found in Sneakers.Delete");
                 return NotFound();
+            }
             return View(product);
         }
 
@@ -133,7 +150,10 @@ namespace MySportShop.Controllers
         {
             Product product = _db.Products.Find(id);
             if (product == null)
+            {
+                _logger.LogWarning("Product not found in Sneakers.Delete Post");
                 return NotFound();
+            }
 
             string upload = _webHostEnvironment.WebRootPath + WC.ImagePath;
             var oldFile = Path.Combine(upload, product.Image);
@@ -146,6 +166,7 @@ namespace MySportShop.Controllers
 
             _db.Products.Remove(product);
             _db.SaveChanges();
+            _logger.LogInformation("Product has been deleted");
             return RedirectToAction("Index");
         }
 
@@ -154,7 +175,10 @@ namespace MySportShop.Controllers
         {
             Product obj = _db.Products.Find(id);
             if (obj == null)
+            {
+                _logger.LogWarning("Product not found in Sneakers.AddProperty");
                 return NotFound();
+            }
 
             ProductVM productVM = new ProductVM {
                 Product = obj,
@@ -162,6 +186,7 @@ namespace MySportShop.Controllers
                 ProductInfos = _db.ProductInfo.Where(x => x.ProductId == obj.ProductId),
                 Info = new ProductInfo()
             };
+            _logger.LogInformation("GET Sneakers.AddPropery called");
             return View(productVM);
         }
 
@@ -174,6 +199,7 @@ namespace MySportShop.Controllers
             obj.ProductId = productVM.Product.ProductId;
 
             _db.ProductInfo.Add(obj);
+            _logger.LogInformation("Property has been added");
             _db.SaveChanges();
             return RedirectToAction("Upsert",new { id = obj.ProductId });
         }

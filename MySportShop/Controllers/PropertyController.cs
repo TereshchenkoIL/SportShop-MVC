@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MySportShop.Data;
 using MySportShop.Models;
 using System;
@@ -14,13 +15,16 @@ namespace MySportShop.Controllers
     public class PropertyController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public PropertyController(ApplicationDbContext db )
+        private readonly ILogger<PropertyController> _logger;
+        public PropertyController(ApplicationDbContext db, ILogger<PropertyController> logger )
         {
+            _logger = logger;
             _db = db;
         }
         public IActionResult Index()
         {
             IEnumerable<Property> properties = _db.Properties;
+            _logger.LogInformation("GET Property.Index called");
             return View(properties);
         }
 
@@ -30,8 +34,12 @@ namespace MySportShop.Controllers
             if (size == null) return View(new Property());
 
             Property prop = _db.Properties.Find(size);
-            if (prop == null) return NotFound();
-
+            if (prop == null)
+            {
+                _logger.LogWarning("Item not found in Property.Upsert");
+                return NotFound(); 
+            }
+            _logger.LogInformation("GET Property.Upsert called");
             return View(prop);
             
         }
@@ -47,13 +55,14 @@ namespace MySportShop.Controllers
                 if (_db.Properties.Find(prop.Size) == null)
                 {
                     _db.Properties.Add(prop);
-
+                    _logger.LogInformation("Add property");
                 }
                 else
                 {
                     Property objFromDb = _db.Set<Property>().Local.FirstOrDefault(x => x.Size == prop.Size);
                     _db.Entry(objFromDb).State = EntityState.Detached;
                     _db.Entry(prop).State = EntityState.Modified;
+                    _logger.LogInformation("Update property");
                 }
 
                 _db.SaveChanges();
@@ -67,8 +76,8 @@ namespace MySportShop.Controllers
         public IActionResult Delete(double? size)
         {
             Property property = _db.Properties.Find(size);
-          
 
+            _logger.LogInformation("GET Property.Delete called");
             return View(property);
         }
 
@@ -78,10 +87,15 @@ namespace MySportShop.Controllers
         public IActionResult DeletePost(double? size)
         {
             Property prop = _db.Properties.Find(size);
-            if (prop == null) return NotFound();
+            if (prop == null)
+            {
+                _logger.LogWarning("Property not found in Property.DeletePost");
+                return NotFound();
+            }
 
             _db.Properties.Remove(prop);
             _db.SaveChanges();
+            _logger.LogInformation("Property has been deleted");
             return RedirectToAction("Index");
         }
     }

@@ -1,0 +1,5 @@
+2021-02-11 13:56:37.8667 Info Message Template Auto Format enabled
+2021-02-11 13:56:37.9423 Info Loading assembly: NLog.Web.AspNetCore
+2021-02-11 13:56:38.0837 Info Adding target FileTarget(Name=allfile)
+2021-02-11 13:56:38.2025 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-11 13:56:38.2686 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 
 namespace MySportShop.Controllers
 {
@@ -19,10 +20,13 @@ namespace MySportShop.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<AppUser> _userManager;
-        public CartController(ApplicationDbContext db, UserManager<AppUser> manager)
+        private readonly ILogger<CartController> _logger;
+        public CartController(ApplicationDbContext db, UserManager<AppUser> manager, ILogger<CartController> logger)
         {
+            _logger = logger;
             _db = db;
             _userManager = manager;
+            _logger.LogDebug(1, "NLog injected into CartController");
         }
         public IActionResult Index()
         {
@@ -38,6 +42,8 @@ namespace MySportShop.Controllers
             {
                 cartVM.Add( new CartVM(_db.Products.Find(item.ProductId),item.Quantity));
             }
+
+            _logger.LogInformation("GET Cart.Index called");
             return View(cartVM);
         }
 
@@ -47,7 +53,7 @@ namespace MySportShop.Controllers
             Product product = _db.Products.Find(id);
             if (id == null)
                 return NotFound();
-
+            _logger.LogInformation("GET Cart.Delete called");
             return View(product);
         }
 
@@ -69,6 +75,7 @@ namespace MySportShop.Controllers
                 if(items.Count() > 0)
                 {
                     items.Remove(items.First(x => x.ProductId == id));
+                    _logger.LogInformation("Remove item from cart");
                 }
                 HttpContext.Session.Set<List<ShoppingCart>>(WC.SessionCart, items);
             }
@@ -107,10 +114,11 @@ namespace MySportShop.Controllers
                 _db.OrderInfo.Add(oInfo);
             }
             _db.SaveChanges();
-           
 
+            _logger.LogInformation("Create an order");
             List<ShoppingCart> items = new List<ShoppingCart>();
             HttpContext.Session.Set<List<ShoppingCart>>(WC.SessionCart, items);
+            _logger.LogInformation("Clear cart");
             return RedirectToAction("Index");
         }
 

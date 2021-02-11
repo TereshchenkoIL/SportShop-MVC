@@ -20,16 +20,19 @@ namespace MySportShop.Controllers
         {
             _logger = logger;
             _db = db;
+            _logger.LogDebug(1, "NLog injected into HomeController");
         }
 
         public IActionResult Index()
         {
             var products = _db.Products;
+            _logger.LogInformation("GET Home.Index called");
             return View(products);
         }
 
         public IActionResult Privacy()
         {
+            _logger.LogInformation("GET Home.Privacy called");
             return View();
         }
 
@@ -55,7 +58,7 @@ namespace MySportShop.Controllers
             shoppingCartList.Add(new ShoppingCart() { ProductId = Id, Quantity = 1});
 
             HttpContext.Session.Set(WC.SessionCart, shoppingCartList);
-
+            _logger.LogInformation("Add an item to cart");
             return RedirectToAction("Index");
         }
     }
