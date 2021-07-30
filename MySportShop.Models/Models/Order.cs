@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MySportShop.Models
+namespace MySportShop.Models.Models
 {
     public class Order
     {

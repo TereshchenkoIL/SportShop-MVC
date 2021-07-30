@@ -3,3 +3,25 @@
 2021-02-11 13:56:38.0837 Info Adding target FileTarget(Name=allfile)
 2021-02-11 13:56:38.2025 Info Adding target FileTarget(Name=ownFile-web)
 2021-02-11 13:56:38.2686 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-02-16 11:17:36.8348 Info Message Template Auto Format enabled
+2021-02-16 11:17:36.9641 Info Loading assembly: NLog.Web.AspNetCore
+2021-02-16 11:17:37.1210 Info Adding target FileTarget(Name=allfile)
+2021-02-16 11:17:37.1512 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-16 11:17:37.2488 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-07-30 10:59:27.7733 Info Message Template Auto Format enabled
+2021-07-30 10:59:27.7817 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-30 10:59:27.8288 Info Adding target FileTarget(Name=allfile)
+2021-07-30 10:59:27.8288 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-30 10:59:27.8674 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-07-30 11:02:11.4029 Info AppDomain Shutting down. Logger closing...
+2021-07-30 11:02:11.4247 Info Logger has been shut down.
+2021-07-30 11:02:19.2154 Info Message Template Auto Format enabled
+2021-07-30 11:02:19.4596 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-30 11:02:19.8099 Info Adding target FileTarget(Name=allfile)
+2021-07-30 11:02:19.9489 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-30 11:02:20.1724 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-07-30 11:07:25.2554 Info Message Template Auto Format enabled
+2021-07-30 11:07:25.3309 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-30 11:07:25.4556 Info Adding target FileTarget(Name=allfile)
+2021-07-30 11:07:25.4700 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-30 11:07:25.5437 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
