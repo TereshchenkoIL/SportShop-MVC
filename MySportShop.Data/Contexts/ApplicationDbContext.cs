@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MySportShop.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MySportShop.Models.Models;
 
-namespace MySportShop.Data
+
+namespace MySportShop.Data.Contexts
 {
     public class ApplicationDbContext : IdentityDbContext
     {
