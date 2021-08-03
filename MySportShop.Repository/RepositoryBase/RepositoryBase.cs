@@ -28,16 +28,16 @@ namespace MySportShop.Repository.RepositoryBase
              _db.Set<T>().Remove(item);
         }
 
-        public async Task<IQueryable<T>> GetAllAsync(bool trackChanges) =>   !trackChanges ?
-                                                                            _db.Set<T>()
-                                                                            .AsNoTracking() :
-                                                                            _db.Set<T>();
+        public async Task<List<T>> GetAllAsync(bool trackChanges) =>  !trackChanges ?
+                                                                             await _db.Set<T>()
+                                                                            .AsNoTracking().ToListAsync() :
+                                                                            await _db.Set<T>().ToListAsync();
 
-        public async Task<IQueryable<T>> GetByCondition(Expression<Func<T, bool>> expression,
+        public async Task<List<T>> GetByCondition(Expression<Func<T, bool>> expression,
             bool trackChanges) =>   !trackChanges ?
-                                    _db.Set<T>().Where(expression)
-                                    .AsNoTracking() :
-                                    _db.Set<T>().Where(expression);
+                                     await _db.Set<T>().Where(expression)
+                                    .AsNoTracking().ToListAsync() :
+                                     await _db.Set<T>().Where(expression).ToListAsync();
 
 
 

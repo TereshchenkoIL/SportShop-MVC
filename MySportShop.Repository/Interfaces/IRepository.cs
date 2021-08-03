@@ -12,8 +12,8 @@ namespace MySportShop.Repository.Interfaces
         void Update(T item);
         Task AddAsync(T item);
         void Delete(T item);
-        Task<IQueryable<T>> GetAllAsync(bool tracked);
-        Task<IQueryable<T>> GetByCondition(Expression<Func<T, bool>> expression,
+        Task<List<T>> GetAllAsync(bool tracked);
+        Task<List<T>> GetByCondition(Expression<Func<T, bool>> expression,
  bool trackChanges);
     }
 }
