@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.ConcreteRepositories
 {
-    class ProductRepository : RepositoryBase<Product>, IProductRepository
+    class OrderRepository : RepositoryBase<Order>, IOrderRepository
     {
-        public ProductRepository(ApplicationDbContext db) : base(db)
+        public OrderRepository(ApplicationDbContext db) : base(db)
         {
+
         }
     }
 }
