@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.Interfaces
 {
-    interface IOrderRepository : IRepository<Order>
+    interface IUserRepository :IRepository<AppUser>
     {
     }
 }
