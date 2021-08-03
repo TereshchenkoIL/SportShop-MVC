@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop", "MySportShop\MySportShop.csproj", "{774DC2A3-35F5-4EA1-824E-E76EAB4799B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySportShop.Models", "MySportShop.Models\MySportShop.Models.csproj", "{F8B88FA0-9907-45D9-AA87-1A1883773468}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop.Models", "MySportShop.Models\MySportShop.Models.csproj", "{F8B88FA0-9907-45D9-AA87-1A1883773468}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySportShop.Data", "MySportShop.Data\MySportShop.Data.csproj", "{6A039F04-C46B-444E-B358-4E67C9C822D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop.Data", "MySportShop.Data\MySportShop.Data.csproj", "{6A039F04-C46B-444E-B358-4E67C9C822D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySportShop.Repository", "MySportShop.Repository\MySportShop.Repository.csproj", "{268ECED1-219F-4A58-BCE0-7ECC4932EAC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop.Repository", "MySportShop.Repository\MySportShop.Repository.csproj", "{268ECED1-219F-4A58-BCE0-7ECC4932EAC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

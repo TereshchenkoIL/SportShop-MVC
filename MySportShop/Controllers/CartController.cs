@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MySportShop.Data;
-using MySportShop.Models;
-using MySportShop.Models.ViewModel;
 using MySportShop.Utility;
 using System;
 using System.Collections.Generic;
@@ -14,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using MySportShop.Repository.Interfaces;
 using MySportShop.Models.Models;
+using MySportShop.Models.Models.ViewModel;
 
 namespace MySportShop.Controllers
 {
@@ -30,7 +28,7 @@ namespace MySportShop.Controllers
             _userManager = manager;
             _logger.LogDebug(1, "NLog injected into CartController");
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
            List<ShoppingCart> items = new List<ShoppingCart>();
             if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null
@@ -42,7 +40,7 @@ namespace MySportShop.Controllers
                 List<CartVM> cartVM = new List<CartVM>();
             foreach(var item in items)
             {
-                cartVM.Add( new CartVM(_db.Products.Find(item.ProductId),item.Quantity));
+                cartVM.Add( new CartVM(await _repositoryManager.Product.GetById(item.ProductId, false),item.Quantity));
             }
 
             _logger.LogInformation("GET Cart.Index called");
@@ -50,9 +48,9 @@ namespace MySportShop.Controllers
         }
 
         //GET
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            Product product = _db.Products.Find(id);
+            Product product = await _repositoryManager.Product.GetById(id.Value, false);
             if (id == null)
                 return NotFound();
             _logger.LogInformation("GET Cart.Delete called");
@@ -62,9 +60,10 @@ namespace MySportShop.Controllers
         //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost(int? id)
+        public async Task<IActionResult> DeletePost(int? id)
         {
-            bool InList = _db.Products.FirstOrDefault(x => x.ProductId == id) != null;
+            Product product = await _repositoryManager.Product.GetById(id.Value, false);
+            bool InList = product != null;
 
            if(InList)
             {
@@ -102,8 +101,8 @@ namespace MySportShop.Controllers
 
             };
 
-            _db.Orders.Add(order);
-            _db.SaveChanges();
+            await _repositoryManager.Order.AddAsync(order);
+            await _repositoryManager.Save();
             int id = order.OrderId;
             for (int i = 0; i < (cart.Count-1)/2; i++)
             {
@@ -113,9 +112,9 @@ namespace MySportShop.Controllers
                     Amount = int.Parse(cart[$"[{i}].Quantity"]),
                     OrderId = id
                 };
-                _db.OrderInfo.Add(oInfo);
+                order.OrdersInfo.Add(oInfo);
             }
-            _db.SaveChanges();
+            await _repositoryManager.Save();
 
             _logger.LogInformation("Create an order");
             List<ShoppingCart> items = new List<ShoppingCart>();

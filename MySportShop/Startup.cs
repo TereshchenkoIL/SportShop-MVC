@@ -12,8 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using MySportShop.Data.Contexts;
 using MySportShop.Data.Extentions;
 using MySportShop.Extensions;
+using MySportShop.Models.Models;
 using MySportShop.Repository.Extensions;
 
 namespace MySportShop
@@ -31,9 +33,18 @@ namespace MySportShop
         public void ConfigureServices(IServiceCollection services)
         {  
             services.AddDistributedMemoryCache();
-            services.AddDataLayer(Configuration,
-                Configuration.GetConnectionString("DefaultConnection"));
-            services.AddIdentityRole(Configuration);
+            //services.AddDataLayer(Configuration,
+            //    Configuration.GetConnectionString("DefaultConnection"));
+            //services.AddIdentityRole(Configuration);
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")));
+
+
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddDefaultTokenProviders().AddDefaultUI()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRepositories(Configuration);
             services.AddSession();
             services.AddControllersWithViews();

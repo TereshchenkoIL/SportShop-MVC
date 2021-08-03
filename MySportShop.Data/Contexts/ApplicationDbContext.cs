@@ -10,6 +10,21 @@ namespace MySportShop.Data.Contexts
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+        public ApplicationDbContext()
+        {
+        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(
+        //        "Server=ASUS\\SQLEXPRESS;Database=SportShopdb;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+        //        );
+        //    }
+        //}
+
         public DbSet<Property> Properties { get; set; }
         public DbSet<ProductInfo> ProductInfo{ get; set; }
         public DbSet<Product> Products { get; set; }

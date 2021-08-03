@@ -16,7 +16,6 @@ D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.AspNetCore
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
@@ -79,7 +78,6 @@ D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.StaticWe
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\MySportShop.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
@@ -208,3 +206,15 @@ D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\NLog.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\NLog.Extensions.Logging.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Data.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Models.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Repository.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Data.pdb
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Models.pdb
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Repository.pdb
+D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\MySportShop.MvcApplicationPartsAssemblyInfo.cs

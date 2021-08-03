@@ -4,9 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MySportShop.Data;
-using MySportShop.Models;
-using MySportShop.Models.ViewModel;
+
+using MySportShop.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,15 +17,16 @@ namespace MySportShop.Controllers
     [Authorize(Roles = WC.AdminRole)]
     public class SneakersController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IRepositoryManager _manager;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ILogger<SneakersController> _logger;
-        public SneakersController(ApplicationDbContext applicationDbContext, IWebHostEnvironment webHostEnvironment, ILogger<SneakersController> logger)
+        public SneakersController(IRepositoryManager manager , IWebHostEnvironment webHostEnvironment, ILogger<SneakersController> logger)
         {
             _logger = logger;
-            _db = applicationDbContext;
+            _manager = manager;
             _webHostEnvironment = webHostEnvironment;
         }
+        /*
         public IActionResult Index()
         {
             IEnumerable<Product> products = _db.Products.Include(u => u.Properties);
@@ -206,6 +206,6 @@ namespace MySportShop.Controllers
             return RedirectToAction("Upsert",new { id = obj.ProductId });
         }
 
-      
+      */
     }
 }

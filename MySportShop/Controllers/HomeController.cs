@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MySportShop.Repository.Interfaces;
 using MySportShop.Models.Models;
+using MySportShop.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace MySportShop.Controllers
 {
@@ -18,16 +20,18 @@ namespace MySportShop.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IRepositoryManager _manager;
 
+
         public HomeController(ILogger<HomeController> logger, IRepositoryManager manager)
         {
             _logger = logger;
             _manager = manager;
-            _logger.LogDebug(1, "NLog injected into HomeController");
+            _logger.LogDebug(1, "NLog injected into HomeController");     
         }
 
         public async Task<IActionResult> Index()
         {
             var products = await _manager.Product.GetAllAsync(false);
+            //var products = await _db.Products.ToListAsync() ;
             _logger.LogInformation("GET Home.Index called");
             return View(products);
         }

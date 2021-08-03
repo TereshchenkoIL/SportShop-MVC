@@ -4,14 +4,91 @@
     "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj": {
+    "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
-        "projectName": "MySportShop",
-        "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
+        "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj",
+        "projectName": "MySportShop.Data",
+        "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj",
         "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\obj\\",
+        "outputPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj": {
+                "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj",
+        "projectName": "MySportShop.Models",
+        "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj",
+        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,21 +120,169 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Repository\\MySportShop.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Repository\\MySportShop.Repository.csproj",
+        "projectName": "MySportShop.Repository",
+        "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Repository\\MySportShop.Repository.csproj",
+        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj": {
+                "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
+        "projectName": "MySportShop",
+        "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
+        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj": {
+                "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Data\\MySportShop.Data.csproj"
+              },
+              "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj": {
+                "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Models\\MySportShop.Models.csproj"
+              },
+              "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Repository\\MySportShop.Repository.csproj": {
+                "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop.Repository\\MySportShop.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.2, )"
             },
             "NLog.Web.AspNetCore": {
               "target": "Package",

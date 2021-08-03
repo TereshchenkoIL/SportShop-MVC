@@ -19,6 +19,7 @@ namespace MySportShop.Models.Models
         public List<ProductInfo> Properties { get; set; }
         public List<OrderInfo> OrdersInfo{ get; set; }
         public string Image { get; set; }
+       // public string Color { get; set; }
 
     }
 }

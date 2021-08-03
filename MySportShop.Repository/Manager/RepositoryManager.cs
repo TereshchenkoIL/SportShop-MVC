@@ -15,6 +15,11 @@ namespace MySportShop.Repository.Manager
         private IOrderRepository _orderRepository;
         private IProductRepository _productRepository;
         private IPropertyRepository _propertyRepository;
+        
+        public RepositoryManager(ApplicationDbContext db)
+        {
+            _db = db;
+        }
 
         public IOrderRepository Order
         {

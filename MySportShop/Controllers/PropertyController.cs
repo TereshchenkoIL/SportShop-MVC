@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MySportShop.Data;
 using MySportShop.Models;
+using MySportShop.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,14 @@ namespace MySportShop.Controllers
     [Authorize(Roles = WC.AdminRole)]
     public class PropertyController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IRepositoryManager _manager;
         private readonly ILogger<PropertyController> _logger;
-        public PropertyController(ApplicationDbContext db, ILogger<PropertyController> logger )
+        public PropertyController(IRepositoryManager manager, ILogger<PropertyController> logger )
         {
             _logger = logger;
-            _db = db;
+            _manager = manager;
         }
+        /*
         public IActionResult Index()
         {
             IEnumerable<Property> properties = _db.Properties;
@@ -98,5 +100,6 @@ namespace MySportShop.Controllers
             _logger.LogInformation("Property has been deleted");
             return RedirectToAction("Index");
         }
+        */
     }
 }

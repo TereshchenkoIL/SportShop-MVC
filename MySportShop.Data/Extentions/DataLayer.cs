@@ -17,6 +17,7 @@ namespace MySportShop.Data.Extentions
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));
+       
             return services;
         }
     }

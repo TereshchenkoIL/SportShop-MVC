@@ -18,6 +18,7 @@ namespace MySportShop.Repository.RepositoryBase
         {
             _db = db;
         }
+
         public async Task AddAsync(T item)
         {
             await _db.Set<T>().AddAsync(item);

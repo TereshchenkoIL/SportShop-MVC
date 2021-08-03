@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using MySportShop.Models;
+using MySportShop.Models.Models;
 
 namespace MySportShop.Areas.Identity.Pages.Account
 {

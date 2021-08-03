@@ -15,5 +15,11 @@ namespace MySportShop.Repository.ConcreteRepositories
         public ProductRepository(ApplicationDbContext db) : base(db)
         {
         }
+
+        public async Task<Product> GetById(int id, bool trackedChanges)
+        {
+            var products = await GetByCondition(x => x.ProductId == id,trackedChanges);
+            return products.FirstOrDefault();
+        }
     }
 }
