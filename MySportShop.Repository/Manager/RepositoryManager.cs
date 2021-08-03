@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.Manager
 {
-    class RepositoryManager : IRepositoryManager
+    public class RepositoryManager : IRepositoryManager
     {
         private readonly ApplicationDbContext _db;
         private IOrderRepository _orderRepository;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.ConcreteRepositories
 {
-    class PropertyRepository :RepositoryBase<Property>, IPropertyRepository
+    public class PropertyRepository :RepositoryBase<Property>, IPropertyRepository
     {
         public PropertyRepository(ApplicationDbContext db) : base(db)
         {

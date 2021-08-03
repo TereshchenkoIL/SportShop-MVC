@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.Interfaces
 {
-    interface IPropertyRepository : IRepository<Property>
+    public interface IPropertyRepository : IRepository<Property>
     {
     }
 }

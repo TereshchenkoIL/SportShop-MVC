@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.ConcreteRepositories
 {
-    class ProductRepository : RepositoryBase<Product>, IProductRepository
+    public class ProductRepository : RepositoryBase<Product>, IProductRepository
     {
         public ProductRepository(ApplicationDbContext db) : base(db)
         {

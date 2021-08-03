@@ -8,24 +8,26 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using MySportShop.Repository.Interfaces;
+using MySportShop.Models.Models;
 
 namespace MySportShop.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ApplicationDbContext _db;
+        private readonly IRepositoryManager _manager;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, IRepositoryManager manager)
         {
             _logger = logger;
-            _db = db;
+            _manager = manager;
             _logger.LogDebug(1, "NLog injected into HomeController");
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var products = _db.Products;
+            var products = await _manager.Product.GetAllAsync(false);
             _logger.LogInformation("GET Home.Index called");
             return View(products);
         }

@@ -12,19 +12,21 @@ using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using MySportShop.Repository.Interfaces;
+using MySportShop.Models.Models;
 
 namespace MySportShop.Controllers
 {
     [Authorize]
     public class CartController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IRepositoryManager _repositoryManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<CartController> _logger;
-        public CartController(ApplicationDbContext db, UserManager<AppUser> manager, ILogger<CartController> logger)
+        public CartController(IRepositoryManager repoManager, UserManager<AppUser> manager, ILogger<CartController> logger)
         {
             _logger = logger;
-            _db = db;
+            _repositoryManager = repoManager;
             _userManager = manager;
             _logger.LogDebug(1, "NLog injected into CartController");
         }

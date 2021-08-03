@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySportShop.Repository.Interfaces
 {
-    interface IRepositoryManager
+    public interface IRepositoryManager
     {
         IOrderRepository Order { get; }
         IProductRepository Product { get; }
