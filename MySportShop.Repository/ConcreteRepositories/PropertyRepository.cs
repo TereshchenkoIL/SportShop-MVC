@@ -1,4 +1,5 @@
-﻿using MySportShop.Data.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using MySportShop.Data.Contexts;
 using MySportShop.Models.Models;
 using MySportShop.Repository.Interfaces;
 using MySportShop.Repository.RepositoryBase;
@@ -14,7 +15,7 @@ namespace MySportShop.Repository.ConcreteRepositories
     {
         public PropertyRepository(ApplicationDbContext db) : base(db)
         {
-
+            
         }
     }
 }

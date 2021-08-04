@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MySportShop.Data;
 using MySportShop.Models;
+using MySportShop.Models.Models;
 using MySportShop.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -22,20 +23,20 @@ namespace MySportShop.Controllers
             _logger = logger;
             _manager = manager;
         }
-        /*
-        public IActionResult Index()
+        
+        public async Task<IActionResult> Index()
         {
-            IEnumerable<Property> properties = _db.Properties;
+            IEnumerable<Property> properties  = await _manager.Property.GetAllAsync(false);
             _logger.LogInformation("GET Property.Index called");
             return View(properties);
         }
 
         //GET
-        public IActionResult Upsert(double? size)
+        public async Task<IActionResult> Upsert(double? size)
         {
             if (size == null) return View(new Property());
 
-            Property prop = _db.Properties.Find(size);
+            Property prop = (await _manager.Property.GetByCondition(x => x.Size == size, false)).FirstOrDefault();
             if (prop == null)
             {
                 _logger.LogWarning("Item not found in Property.Upsert");
@@ -49,25 +50,24 @@ namespace MySportShop.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(Property prop)
+        public async Task<IActionResult> Upsert(Property prop)
         {
             
             if (ModelState.IsValid)
             {
-                if (_db.Properties.Find(prop.Size) == null)
+                Property objFromDb = (await _manager.Property.GetByCondition(x => x.Size == prop.Size, true)).FirstOrDefault();
+                if ( objFromDb == null)
                 {
-                    _db.Properties.Add(prop);
+                    await _manager.Property.AddAsync(prop);
                     _logger.LogInformation("Add property");
                 }
                 else
                 {
-                    Property objFromDb = _db.Set<Property>().Local.FirstOrDefault(x => x.Size == prop.Size);
-                    _db.Entry(objFromDb).State = EntityState.Detached;
-                    _db.Entry(prop).State = EntityState.Modified;
+                    _manager.Property.Update(prop);
                     _logger.LogInformation("Update property");
                 }
 
-                _db.SaveChanges();
+                await _manager.Save();
                 return RedirectToAction("Index");
             }
             return View(prop);
@@ -75,9 +75,9 @@ namespace MySportShop.Controllers
 
 
         //GET
-        public IActionResult Delete(double? size)
+        public async Task<IActionResult> Delete(double? size)
         {
-            Property property = _db.Properties.Find(size);
+            Property property = (await _manager.Property.GetByCondition(x => x.Size == size, true)).FirstOrDefault();
 
             _logger.LogInformation("GET Property.Delete called");
             return View(property);
@@ -86,20 +86,20 @@ namespace MySportShop.Controllers
         //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost(double? size)
+        public async Task<IActionResult> DeletePost(double? size)
         {
-            Property prop = _db.Properties.Find(size);
+            Property prop = (await _manager.Property.GetByCondition(x => x.Size == size, true)).FirstOrDefault();
             if (prop == null)
             {
                 _logger.LogWarning("Property not found in Property.DeletePost");
                 return NotFound();
             }
 
-            _db.Properties.Remove(prop);
-            _db.SaveChanges();
+            _manager.Property.Delete(prop);
+            await _manager.Save();
             _logger.LogInformation("Property has been deleted");
             return RedirectToAction("Index");
         }
-        */
+        
     }
 }

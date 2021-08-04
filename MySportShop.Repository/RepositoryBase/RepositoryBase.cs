@@ -12,7 +12,7 @@ namespace MySportShop.Repository.RepositoryBase
 {
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
-        private readonly ApplicationDbContext _db;
+        protected readonly ApplicationDbContext _db;
 
         public RepositoryBase(ApplicationDbContext db)
         {
