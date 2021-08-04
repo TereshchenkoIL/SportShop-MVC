@@ -9,7 +9,12 @@ namespace MySportShop.Repository.Interfaces
 {
     public interface IProductRepository : IRepository<Product>
     {
-        Task<Product> GetById(int id,bool trackedChanges);
- 
+        Task<Product> GetById(int? id,bool trackedChanges);
+        Task<List<Product>> GetAllWithProps(bool trackedChanges);
+
+        Task<List<ProductInfo>> GetProductInfos(int? id, bool trackedChanges);
+
+
+
     }
 }

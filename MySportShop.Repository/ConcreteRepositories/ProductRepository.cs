@@ -1,4 +1,5 @@
-﻿using MySportShop.Data.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using MySportShop.Data.Contexts;
 using MySportShop.Models.Models;
 using MySportShop.Repository.Interfaces;
 using MySportShop.Repository.RepositoryBase;
@@ -16,10 +17,28 @@ namespace MySportShop.Repository.ConcreteRepositories
         {
         }
 
-        public async Task<Product> GetById(int id, bool trackedChanges)
+        public async Task<List<Product>> GetAllWithProps(bool trackedChanges) => trackedChanges ?
+                                                                                await _db.Set<Product>()
+                                                                                .Include(x => x.Properties).ToListAsync() :
+                                                                                await _db.Set<Product>()
+                                                                                .Include(x => x.Properties)
+                                                                                .AsNoTracking().ToListAsync();
+
+
+
+        public async Task<Product> GetById(int? id, bool trackedChanges)
         {
             var products = await GetByCondition(x => x.ProductId == id,trackedChanges);
             return products.FirstOrDefault();
         }
+
+        public async Task<List<ProductInfo>> GetProductInfos(int? id, bool trackedChanges) => trackedChanges ?
+                                                                                await _db.Set<ProductInfo>().Where(x => x.ProductId == id)
+                                                                                .ToListAsync() :
+                                                                                 await _db.Set<ProductInfo>().Where(x => x.ProductId == id)
+                                                                                .AsNoTracking().ToListAsync();
+
+
+
     }
 }

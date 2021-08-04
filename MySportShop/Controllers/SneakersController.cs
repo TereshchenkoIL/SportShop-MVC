@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-
+using MySportShop.Models.Models;
+using MySportShop.Models.Models.ViewModel;
 using MySportShop.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,10 @@ namespace MySportShop.Controllers
             _manager = manager;
             _webHostEnvironment = webHostEnvironment;
         }
-        /*
-        public IActionResult Index()
+        
+        public async Task<IActionResult> Index()
         {
-            IEnumerable<Product> products = _db.Products.Include(u => u.Properties);
+            IEnumerable<Product> products =  await _manager.Product.GetAllWithProps(false);
             _logger.LogInformation("GET Sneakers.Index called");
             return View(products);
             
@@ -38,12 +39,12 @@ namespace MySportShop.Controllers
       
 
         //GET
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
             ProductVM productVM = new ProductVM()
             {
                 Product = new Product(),
-                Properties = _db.Properties.Select(x=> new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() }),
+                Properties = (await _manager.Property.GetAllAsync(false)).Select(x=> new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() }),
                 ProductInfos = new List<ProductInfo>()
             };
 
@@ -54,7 +55,7 @@ namespace MySportShop.Controllers
             }
             else
             {
-                Product product = _db.Products.Find(id);
+                Product product = await _manager.Product.GetById(id, true);
                 if (product == null)
                 {
                     _logger.LogWarning("Product not found in Sneakers.Upsert");
@@ -71,7 +72,7 @@ namespace MySportShop.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(ProductVM productVM)
+        public async Task<IActionResult> Upsert(ProductVM productVM)
         {
             if(ModelState.IsValid)
             {
@@ -89,10 +90,10 @@ namespace MySportShop.Controllers
                     }
                     productVM.Product.Image = fileName + extension;
                     
-                    _db.Products.Add(productVM.Product);
+                  await _manager.Product.AddAsync(productVM.Product);
                 }else
                 {
-                Product objFromDb = _db.Products.AsNoTracking().FirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
+                Product objFromDb = (await _manager.Product.GetByCondition(x => x.ProductId == productVM.Product.ProductId, false)).FirstOrDefault();
                 if(files.Count > 0)
                     {
                         string upload = webRootPath + WC.ImagePath;
@@ -117,15 +118,15 @@ namespace MySportShop.Controllers
                     {
                         productVM.Product.Image = objFromDb.Image;
                     }
-                    _db.Products.Update(productVM.Product);
+                   _manager.Product.Update(productVM.Product);
                 }
-                
-                _db.SaveChanges();
+
+                await _manager.Save();
                 _logger.LogInformation("Item has been upserted");
                 return RedirectToAction("Index");
             }
             
-            productVM.Properties =  _db.Properties.Select(x => new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() });
+            productVM.Properties =  (await _manager.Property.GetAllAsync(false)).Select(x => new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() });
             return View(productVM);
 
 
@@ -133,10 +134,10 @@ namespace MySportShop.Controllers
 
 
         //GET
-        public  IActionResult Delete(int? id)
+        public async  Task<IActionResult> Delete(int? id)
         {
             
-            Product product = _db.Products.Find(id);
+            Product product = await _manager.Product.GetById(id, false);
             if (product == null)
             {
                 _logger.LogWarning("Product not found in Sneakers.Delete");
@@ -148,9 +149,9 @@ namespace MySportShop.Controllers
         //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost(int? id)
+        public async Task<IActionResult> DeletePost(int? id)
         {
-            Product product = _db.Products.Find(id);
+            Product product = await _manager.Product.GetById(id, true);
             if (product == null)
             {
                 _logger.LogWarning("Product not found in Sneakers.Delete Post");
@@ -166,16 +167,16 @@ namespace MySportShop.Controllers
             }
 
 
-            _db.Products.Remove(product);
-            _db.SaveChanges();
+            _manager.Product.Delete(product);
+            await _manager.Save();
             _logger.LogInformation("Product has been deleted");
             return RedirectToAction("Index");
         }
 
         //GET
-        public IActionResult AddProperty(int? id)
+        public async Task<IActionResult> AddProperty(int? id)
         {
-            Product obj = _db.Products.Find(id);
+            Product obj = await _manager.Product.GetById(id, false);
             if (obj == null)
             {
                 _logger.LogWarning("Product not found in Sneakers.AddProperty");
@@ -184,8 +185,8 @@ namespace MySportShop.Controllers
 
             ProductVM productVM = new ProductVM {
                 Product = obj,
-                Properties = _db.Properties.Select(x => new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() }),
-                ProductInfos = _db.ProductInfo.Where(x => x.ProductId == obj.ProductId),
+                Properties = (await _manager.Property.GetAllAsync(false)).Select(x => new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() }),
+                ProductInfos = await _manager.Product.GetProductInfos(obj.ProductId, false),
                 Info = new ProductInfo()
             };
             _logger.LogInformation("GET Sneakers.AddPropery called");
@@ -195,17 +196,17 @@ namespace MySportShop.Controllers
         //POST
         [HttpPost, ActionName("AddProperty")]
         [ValidateAntiForgeryToken]
-        public IActionResult AddPropertyPost(ProductVM productVM)
+        public async Task<IActionResult> AddPropertyPost(ProductVM productVM)
         {
             ProductInfo obj = productVM.Info;
             obj.ProductId = productVM.Product.ProductId;
-
-            _db.ProductInfo.Add(obj);
+            Product objFromDb = await _manager.Product.GetById(obj.ProductId, true);
+            objFromDb.Properties.Add(obj);
             _logger.LogInformation("Property has been added");
-            _db.SaveChanges();
+            _manager.Save();
             return RedirectToAction("Upsert",new { id = obj.ProductId });
         }
 
-      */
+      
     }
 }
