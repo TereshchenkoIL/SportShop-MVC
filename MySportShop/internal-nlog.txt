@@ -194,3 +194,58 @@
 2021-08-03 19:35:27.1161 Info Adding target FileTarget(Name=allfile)
 2021-08-03 19:35:27.1443 Info Adding target FileTarget(Name=ownFile-web)
 2021-08-03 19:35:27.2184 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-04 12:04:51.1607 Info Message Template Auto Format enabled
+2021-08-04 12:04:51.2067 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-04 12:04:51.2942 Info Adding target FileTarget(Name=allfile)
+2021-08-04 12:04:51.3141 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-04 12:04:51.3711 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-04 12:10:13.1113 Info Message Template Auto Format enabled
+2021-08-04 12:10:13.1707 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-04 12:10:13.3069 Info Adding target FileTarget(Name=allfile)
+2021-08-04 12:10:13.3210 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-04 12:10:13.3850 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-04 12:18:23.6841 Info Message Template Auto Format enabled
+2021-08-04 12:18:23.7254 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-04 12:18:23.8469 Info Adding target FileTarget(Name=allfile)
+2021-08-04 12:18:23.9117 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-04 12:18:23.9844 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-04 12:20:34.0352 Info Message Template Auto Format enabled
+2021-08-04 12:20:34.0818 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-04 12:20:34.2000 Info Adding target FileTarget(Name=allfile)
+2021-08-04 12:20:34.2162 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-04 12:20:34.2861 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-04 12:23:25.2157 Info Message Template Auto Format enabled
+2021-08-04 12:23:25.2628 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-04 12:23:25.3996 Info Adding target FileTarget(Name=allfile)
+2021-08-04 12:23:25.4630 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-04 12:23:25.5243 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-05 13:13:01.6075 Info Message Template Auto Format enabled
+2021-08-05 13:13:01.6489 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-05 13:13:01.7625 Info Adding target FileTarget(Name=allfile)
+2021-08-05 13:13:01.7868 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-05 13:13:01.8559 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-05 13:14:29.9217 Info Message Template Auto Format enabled
+2021-08-05 13:14:29.9402 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-05 13:14:30.0697 Info Adding target FileTarget(Name=allfile)
+2021-08-05 13:14:30.1340 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-05 13:14:30.2175 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-05 13:17:44.6542 Info Message Template Auto Format enabled
+2021-08-05 13:17:44.6803 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-05 13:17:44.7856 Info Adding target FileTarget(Name=allfile)
+2021-08-05 13:17:44.8098 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-05 13:17:44.8747 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-05 13:19:22.9921 Info Message Template Auto Format enabled
+2021-08-05 13:19:23.0709 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-05 13:19:23.2184 Info Adding target FileTarget(Name=allfile)
+2021-08-05 13:19:23.3141 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-05 13:19:23.3657 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-05 13:19:55.4703 Info Message Template Auto Format enabled
+2021-08-05 13:19:55.5901 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-05 13:19:55.6690 Info Adding target FileTarget(Name=allfile)
+2021-08-05 13:19:55.6784 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-05 13:19:55.7154 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-08-05 13:24:18.5163 Info Message Template Auto Format enabled
+2021-08-05 13:24:18.5530 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-05 13:24:18.6753 Info Adding target FileTarget(Name=allfile)
+2021-08-05 13:24:18.7187 Info Adding target FileTarget(Name=ownFile-web)
+2021-08-05 13:24:18.7774 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config

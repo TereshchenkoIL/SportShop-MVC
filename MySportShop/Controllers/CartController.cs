@@ -50,7 +50,7 @@ namespace MySportShop.Controllers
         //GET
         public async Task<IActionResult> Delete(int? id)
         {
-            Product product = await _repositoryManager.Product.GetById(id.Value, false);
+            Product product = await _repositoryManager.Product.GetById(id, false);
             if (id == null)
                 return NotFound();
             _logger.LogInformation("GET Cart.Delete called");
@@ -62,7 +62,7 @@ namespace MySportShop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeletePost(int? id)
         {
-            Product product = await _repositoryManager.Product.GetById(id.Value, false);
+            Product product = await _repositoryManager.Product.GetById(id, false);
             bool InList = product != null;
 
            if(InList)
