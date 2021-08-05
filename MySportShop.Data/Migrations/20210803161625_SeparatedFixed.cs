@@ -6,18 +6,12 @@ namespace MySportShop.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Color",
-                table: "Products");
+     
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Color",
-                table: "Products",
-                type: "nvarchar(max)",
-                nullable: true);
+   
         }
     }
 }

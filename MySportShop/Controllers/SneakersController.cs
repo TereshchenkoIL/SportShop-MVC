@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MySportShop.Models.Models;
-using MySportShop.Models.Models.ViewModel;
+using MySportShop.Models.ViewModel;
 using MySportShop.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -205,6 +205,15 @@ namespace MySportShop.Controllers
             _logger.LogInformation("Property has been added");
             _manager.Save();
             return RedirectToAction("Upsert",new { id = obj.ProductId });
+        }
+
+
+       // GET
+       [HttpGet]
+       public async Task<IActionResult> Details(int? id)
+        {
+            Product product = await _manager.Product.GetById(id, false);
+            return View(product);
         }
 
       

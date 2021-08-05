@@ -1,0 +1,55 @@
+﻿@model MySportShop.Models.Models.Product
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>@Model.Name</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-sm-12">
+            <img src="@WC.ImagePath@Model.Image"  style="border-radius:5px; border:1px solid #bbb; max-width:400px;" />
+        </div>
+        <div class="col-6 col-sm-12">
+            <p>@Model.Description</p><br />
+            <h4>@Model.Price</h4><br />
+            <p>@Model.Sex - @Model.Season</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            @if (@Model.Properties.Count() > 0)
+            {
+
+                <table class="table table-bordered table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                Size
+                            </th>
+
+                            <th>
+                                Quantity
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var obj in Model.Properties)
+                        {
+                            <tr>
+                                <td width="30%">@obj.Size</td>
+
+                                <td width="20%">@obj.Quantity</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>

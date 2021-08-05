@@ -218,3 +218,5 @@ D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Models.p
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\MySportShop.Repository.pdb
 D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\MySportShop.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Cart\OrderInfo.cshtml.g.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Sneakers\Details.cshtml.g.cs

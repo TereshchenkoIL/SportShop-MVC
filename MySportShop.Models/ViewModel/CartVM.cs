@@ -1,9 +1,10 @@
-﻿using System;
+﻿using MySportShop.Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MySportShop.Models.Models.ViewModel
+namespace MySportShop.Models.ViewModel
 {
     public class CartVM
     {
@@ -12,7 +13,8 @@ namespace MySportShop.Models.Models.ViewModel
             Product = product;
             Quantity = quantity;
         }
-        public Product Product;
-        public int Quantity;
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
+        public double Size { get; set; }
     }
 }

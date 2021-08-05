@@ -11,7 +11,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using MySportShop.Repository.Interfaces;
 using MySportShop.Models.Models;
-using MySportShop.Models.Models.ViewModel;
+using MySportShop.Models.ViewModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MySportShop.Controllers
 {
@@ -30,14 +31,9 @@ namespace MySportShop.Controllers
         }
         public async Task<IActionResult> Index()
         {
-           List<ShoppingCart> items = new List<ShoppingCart>();
-            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null
-               && HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
-            {
-                items = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
-            }
+            List<ShoppingCart> items = WC.GetCartItems(HttpContext).ToList();
 
-                List<CartVM> cartVM = new List<CartVM>();
+            List<CartVM> cartVM = new List<CartVM>();
             foreach(var item in items)
             {
                 cartVM.Add( new CartVM(await _repositoryManager.Product.GetById(item.ProductId, false),item.Quantity));
@@ -67,12 +63,7 @@ namespace MySportShop.Controllers
 
            if(InList)
             {
-                List<ShoppingCart> items = new List<ShoppingCart>();
-                if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null
-                   && HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
-                {
-                    items = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
-                }
+                List<ShoppingCart> items = WC.GetCartItems(HttpContext).ToList();
                 if(items.Count() > 0)
                 {
                     items.Remove(items.First(x => x.ProductId == id));
@@ -84,7 +75,7 @@ namespace MySportShop.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost, ActionName("Index")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateOrder(IFormCollection cart)
         {
@@ -97,19 +88,21 @@ namespace MySportShop.Controllers
             Order order = new Order()
             {
                 Id = user.Id,
-                Creation_Date = DateTime.Now
+                Creation_Date = DateTime.Now,
+                OrdersInfo = new List<OrderInfo>()
 
             };
 
             await _repositoryManager.Order.AddAsync(order);
             await _repositoryManager.Save();
             int id = order.OrderId;
-            for (int i = 0; i < (cart.Count-1)/2; i++)
+            for (int i = 0; i < (cart.Count-1)/3; i++)
             {
                 OrderInfo oInfo = new OrderInfo()
                 {
                     ProductId = int.Parse(cart[$"[{i}].Product.ProductId"]),
                     Amount = int.Parse(cart[$"[{i}].Quantity"]),
+                    Size = int.Parse(cart[$"[{i}].Size"]),
                     OrderId = id
                 };
                 order.OrdersInfo.Add(oInfo);
@@ -121,6 +114,23 @@ namespace MySportShop.Controllers
             HttpContext.Session.Set<List<ShoppingCart>>(WC.SessionCart, items);
             _logger.LogInformation("Clear cart");
             return RedirectToAction("Index");
+        }
+        //GET
+        [HttpGet]
+        public async Task<IActionResult> OrderInfo()
+        {
+            List<ShoppingCart> items = WC.GetCartItems(HttpContext).ToList();
+
+            var cartVM = await Task.WhenAll(items.Select( async x => 
+                        new CartVM( await _repositoryManager.Product
+                        .GetById(x.ProductId, false), x.Quantity)));
+            OrderInfoVM orderInfoVM = new OrderInfoVM() { 
+            Products = cartVM,
+            Properties = (await _repositoryManager.Property.GetAllAsync(false))
+            .Select(x => new SelectListItem { Text = x.Size.ToString(), Value = x.Size.ToString() })
+            
+            };
+            return View(orderInfoVM);
         }
 
 

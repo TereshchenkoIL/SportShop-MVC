@@ -26,11 +26,14 @@ namespace MySportShop.Repository.ConcreteRepositories
 
 
 
-        public async Task<Product> GetById(int? id, bool trackedChanges)
-        {
-            var products = await GetByCondition(x => x.ProductId == id,trackedChanges);
-            return products.FirstOrDefault();
-        }
+        public async Task<Product> GetById(int? id, bool trackedChanges) => trackedChanges ?
+                                                                                await _db.Set<Product>()
+                                                                                .Where(x => x.ProductId == id)
+                                                                                .Include(x => x.Properties)
+                                                                                .FirstOrDefaultAsync() :
+                                                                                await _db.Set<Product>()
+                                                                                .Where(x => x.ProductId == id).Include(x => x.Properties)
+                                                                                .AsNoTracking().FirstOrDefaultAsync();
 
         public async Task<List<ProductInfo>> GetProductInfos(int? id, bool trackedChanges) => trackedChanges ?
                                                                                 await _db.Set<ProductInfo>().Where(x => x.ProductId == id)

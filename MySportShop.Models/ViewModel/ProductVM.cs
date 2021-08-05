@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MySportShop.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MySportShop.Models.Models.ViewModel
+namespace MySportShop.Models.ViewModel
 {
     public class ProductVM
     {
