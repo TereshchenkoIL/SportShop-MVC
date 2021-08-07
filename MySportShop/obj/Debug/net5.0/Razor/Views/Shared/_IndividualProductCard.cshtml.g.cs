@@ -26,8 +26,15 @@ using MySportShop.Models.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Projects\ASPNET\MySportShop\MySportShop\Views\_ViewImports.cshtml"
+using MySportShop.Models.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc", @"/Views/Shared/_IndividualProductCard.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a21cb8eb11b446e1a80ab95f30779c717f3573dc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a2c2e52acd9e850b427b72c47db6717a9fdd3d77", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__IndividualProductCard : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MySportShop.Models.Models.Product>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Sneakers", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -106,7 +113,7 @@ WriteAttributeValue("", 280, Model.Image, 280, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n            </div>\r\n            <div class=\"col-6 p-1\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc7950", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc8136", async() => {
                 WriteLiteral("View Details");
             }
             );
@@ -141,9 +148,9 @@ WriteAttributeValue("", 280, Model.Image, 280, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            </div>\r\n            <div class=\"col-6 p-1\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc10599", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc10785", async() => {
                 WriteLiteral("\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc10878", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7f8486f9601aa0cfdc98bcf7641bd6dbdd6897fc11064", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

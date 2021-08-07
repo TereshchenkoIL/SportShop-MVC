@@ -26,8 +26,15 @@ using MySportShop.Models.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Projects\ASPNET\MySportShop\MySportShop\Views\_ViewImports.cshtml"
+using MySportShop.Models.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"348836856d4a4b458ed6d3e78115a3e141465440", @"/Views/Property/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a21cb8eb11b446e1a80ab95f30779c717f3573dc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a2c2e52acd9e850b427b72c47db6717a9fdd3d77", @"/Views/_ViewImports.cshtml")]
     public class Views_Property_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<MySportShop.Models.Models.Property>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Upsert", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -60,7 +67,7 @@ using MySportShop.Models.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<div class=\"container p-3\">\r\n    <div class=\"row pt-4\">\r\n        <div class=\"col-6\">\r\n            <h2 class=\"text-primary\">Property List</h2>\r\n        </div>\r\n        <div class=\"col-6 text-right\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "348836856d4a4b458ed6d3e78115a3e1414654405006", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "348836856d4a4b458ed6d3e78115a3e1414654405192", async() => {
                 WriteLiteral("\r\n                <i class=\"fas fa-plus\"></i> &nbsp; Create New Product\r\n            ");
             }
             );
@@ -126,7 +133,7 @@ using MySportShop.Models.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                       \r\n                        <td class=\"text-center\">\r\n                            <div class=\"w-75 btn-group\" role=\"group\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "348836856d4a4b458ed6d3e78115a3e1414654408061", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "348836856d4a4b458ed6d3e78115a3e1414654408247", async() => {
                 WriteLiteral("\r\n                                    <i class=\"fas fa-edit\"></i>\r\n                                ");
             }
             );
@@ -158,7 +165,7 @@ using MySportShop.Models.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "348836856d4a4b458ed6d3e78115a3e14146544010424", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "348836856d4a4b458ed6d3e78115a3e14146544010610", async() => {
                 WriteLiteral("\r\n                                    <i class=\"far fa-trash-alt\"></i>\r\n                                ");
             }
             );
