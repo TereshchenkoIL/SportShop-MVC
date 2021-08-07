@@ -182,3 +182,7 @@ D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Cart\Ord
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Sneakers\Details.cshtml.g.cs
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Account\LogIn.cshtml.g.cs
 D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Users\ChangePassword.cshtml.g.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Users\CreateUser.cshtml.g.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Users\Delete.cshtml.g.cs
+D:\Projects\ASPNET\MySportShop\MySportShop\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs

@@ -11,6 +11,7 @@ namespace MySportShop.Repository.Interfaces
         IOrderRepository Order { get; }
         IProductRepository Product { get; }
         IPropertyRepository Property { get; }
+        IUserRepository User { get; }
         Task Save();
     }
 }

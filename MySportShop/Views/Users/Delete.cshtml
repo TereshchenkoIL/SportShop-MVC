@@ -1,0 +1,15 @@
+﻿@model MySportShop.Models.Models.AppUser
+
+<div class="container">
+    <div class="row">
+        <h2>Delete user</h2>
+    </div>
+
+
+    <form method="post" asp-controller="Users" asp-action="Delete">
+        <input name="id" hidden value="@Model.Id" />
+        <h4>@Model.Email</h4>
+        <input type="submit" class="btn btn-danger" value="Delete"/>
+    </form>
+
+</div>

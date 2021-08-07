@@ -15,7 +15,8 @@ namespace MySportShop.Repository.Manager
         private IOrderRepository _orderRepository;
         private IProductRepository _productRepository;
         private IPropertyRepository _propertyRepository;
-        
+        private IUserRepository _userRepository;
+
         public RepositoryManager(ApplicationDbContext db)
         {
             _db = db;
@@ -48,6 +49,16 @@ namespace MySportShop.Repository.Manager
                 if (_propertyRepository == null)
                     _propertyRepository = new PropertyRepository(_db);
                 return _propertyRepository;
+            }
+        }
+
+        public IUserRepository User
+        {
+            get
+            {
+                if (_userRepository == null)
+                    _userRepository = new UserRepository(_db);
+                return _userRepository;
             }
         }
 
