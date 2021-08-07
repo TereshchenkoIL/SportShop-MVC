@@ -216,6 +216,23 @@ namespace MySportShop.Controllers
             return View(product);
         }
 
-      
+        // GET
+        [HttpGet, ActionName("MaleSneakers")]
+        public async Task<IActionResult> GetMaleSneakers()
+        {
+            var users = await _manager.Product.GetByCondition(x => x.Sex == "Male" || x.Sex == "All", false);
+            return View("../Home/Index", users);
+        }
+
+        // GET
+        [HttpGet, ActionName("FemaleSneakers")]
+        public async Task<IActionResult> GetFemaleSneakers()
+        {
+            var users = await _manager.Product.GetByCondition(x => x.Sex == "Female" || x.Sex == "All", false);
+            return View("../Home/Index", users);
+        }
+
+
+
     }
 }

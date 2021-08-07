@@ -24,13 +24,8 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav mr-auto ml-4">
-                        <li class="nav-item active"><a class="nav-link">Новинки</a></li>
-                        <li class="nav-item"><a class="nav-link">Чоловіком</a></li>
-                        <li class="nav-item"><a class="nav-link">Жінкам</a></li>
-                        <li class="nav-item"><a class="nav-link">Дітям</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link">Дітям</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Sneakers" asp-action="MaleSneakers">Чоловіком</a></li>
+                        <li class="nav-item"><a class="nav-link"  asp-controller="Sneakers" asp-action="FemaleSneakers">Жінкам</a></li>
                         <li>
                             @if (HttpContextAccessor.HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart) != null)
                             {
