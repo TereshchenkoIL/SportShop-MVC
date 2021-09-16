@@ -10323,9 +10323,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
-      "projectName": "MySportShop",
-      "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
+      "projectUniqueName": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.API.csproj",
+      "projectName": "MySportShop.API",
+      "projectPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.API.csproj",
       "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\obj\\",
       "projectStyle": "PackageReference",

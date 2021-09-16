@@ -31,7 +31,7 @@ namespace MySportShop.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            return View(new RegisterVM { ReturnUrl ="/Home/Index"});
         }
 
         // POST

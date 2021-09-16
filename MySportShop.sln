@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop", "MySportShop\MySportShop.csproj", "{774DC2A3-35F5-4EA1-824E-E76EAB4799B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop.API", "MySportShop\MySportShop.API.csproj", "{774DC2A3-35F5-4EA1-824E-E76EAB4799B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySportShop.Models", "MySportShop.Models\MySportShop.Models.csproj", "{F8B88FA0-9907-45D9-AA87-1A1883773468}"
 EndProject

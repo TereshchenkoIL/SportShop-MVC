@@ -410,3 +410,23 @@
 2021-08-07 22:05:32.0905 Info Adding target FileTarget(Name=allfile)
 2021-08-07 22:05:32.0905 Info Adding target FileTarget(Name=ownFile-web)
 2021-08-07 22:05:32.2548 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-09-15 18:06:48.9618 Info Message Template Auto Format enabled
+2021-09-15 18:06:48.9971 Info Loading assembly: NLog.Web.AspNetCore
+2021-09-15 18:06:49.0895 Info Adding target FileTarget(Name=allfile)
+2021-09-15 18:06:49.0895 Info Adding target FileTarget(Name=ownFile-web)
+2021-09-15 18:06:49.1857 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-09-15 18:29:33.0952 Info Message Template Auto Format enabled
+2021-09-15 18:29:33.2447 Info Loading assembly: NLog.Web.AspNetCore
+2021-09-15 18:29:33.4243 Info Adding target FileTarget(Name=allfile)
+2021-09-15 18:29:33.4837 Info Adding target FileTarget(Name=ownFile-web)
+2021-09-15 18:29:33.5659 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-09-15 18:39:30.3162 Info Message Template Auto Format enabled
+2021-09-15 18:39:30.3596 Info Loading assembly: NLog.Web.AspNetCore
+2021-09-15 18:39:30.4555 Info Adding target FileTarget(Name=allfile)
+2021-09-15 18:39:30.4682 Info Adding target FileTarget(Name=ownFile-web)
+2021-09-15 18:39:30.5328 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config
+2021-09-15 18:46:53.9490 Info Message Template Auto Format enabled
+2021-09-15 18:46:54.0164 Info Loading assembly: NLog.Web.AspNetCore
+2021-09-15 18:46:54.1114 Info Adding target FileTarget(Name=allfile)
+2021-09-15 18:46:54.1253 Info Adding target FileTarget(Name=ownFile-web)
+2021-09-15 18:46:54.1866 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\Projects\ASPNET\MySportShop\MySportShop\bin\Debug\net5.0\nlog.config

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xYLt4fGuG1oIERuEd7/WPV1rDeQrKua+dxzCSdvkEW/2C9gbZclFwgnYhiYRvYDVscDJZTdKsL5y5E2F6EJX6w==",
+  "dgSpecHash": "sttpV2tFdIgJ56Zxp8LPB9vii0mrS1C404cPutUGo9MprCjB1ClsIF95WsV/9ChCxHPRc/Oj+J+hr3JReT1Mkw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.csproj",
+  "projectFilePath": "D:\\Projects\\ASPNET\\MySportShop\\MySportShop\\MySportShop.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Win10Pro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
